@@ -1,0 +1,11 @@
+spring:
+  application.name: gaff-gateway-service
+  profiles.active: ${SPRING_CLOUD_CONFIG_PROFILE}
+  cloud:
+    config:
+      uri: ${SPRING_CLOUD_CONFIG_URI}
+      name: ${spring.application.name}
+      label: ${SPRING_CLOUD_CONFIG_LABEL}
+      profile: ${spring.profiles.active}
+  config:
+    name: ${spring.application.name}
