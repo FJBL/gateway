@@ -11,40 +11,12 @@ spring:
            predicates:
             - Path=/gaff/session-control/**
             
-         - id: GAFF-PARAMETRIA-SERVICE
-           uri: http://open-service:8082/
-           predicates:
-            - Path=/**
- 
          - id: aportacion-service
            uri: http://aportacion-service:8080
            predicates:
             - Path=/**
             
-         - id: deuda-service
-           uri: http://deuda-service:8080
-           predicates:
-           - Path=/deuda/**
-
-         - id: FINANZAS-SERVICE
-           uri: http://localhost:8081
-           predicates:
-           - Path=/inventario/**
-
-         - id: AUTH-SERVICE
-           uri: http://localhost:8082
-           predicates:
-            - Path=/authentication/**
-        
-         - id: GAFF-FRONT-SERVICE
-           uri: http://localhost:4200
-           predicates:
-            - Path=/redirect/**
-           filters:
-            - name: RedirectTo
-              args:
-               status: 301
-               url : "http://localhost:4200"
+       
    httpclient:
       connect-timeout: 1000
       response-timeout: 55s
