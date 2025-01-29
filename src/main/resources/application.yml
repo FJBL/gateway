@@ -6,12 +6,7 @@ spring:
    cloud:
      gateway:
        routes:
-         - id: angular-service
-           uri: http://angular-service:8080
-           predicates:
-            - Path=/**
-           #filters:
-           # - RedirectTo=302, http://angular-service:8080
+
             
          - id: aportacion-service
            uri: http://aportacion-service:8080
@@ -23,7 +18,10 @@ spring:
            predicates:
             - Path=/first/**
             
-       
+         - id: angular-service
+           uri: http://angular-service:8080
+           predicates:
+            - Path=/**    
    httpclient:
       connect-timeout: 1000
       response-timeout: 55s
