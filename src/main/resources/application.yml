@@ -6,22 +6,22 @@ spring:
    cloud:
      gateway:
        routes:
-         - id: GAFF-SESSION-SERVICE
+         - id: angular-service
            uri: http://angular-service:8080
            predicates:
-            - Path=/front
-           filters:
-            - RedirectTo=302, http://angular-service:8080
+            - Path=/**
+           #filters:
+           # - RedirectTo=302, http://angular-service:8080
             
          - id: aportacion-service
            uri: http://aportacion-service:8080
            predicates:
-            - Path=/**
+            - Path=/open/**
 
-         - id: first-microservice
-           uri: http://first-microservice:8080
+         - id: first-service
+           uri: http://first-service:8080
            predicates:
-            - Path=/**
+            - Path=/first/**
             
        
    httpclient:
