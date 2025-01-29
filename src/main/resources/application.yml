@@ -7,9 +7,9 @@ spring:
      gateway:
        routes:
          - id: GAFF-SESSION-SERVICE
-           uri: http://localhost:8081
+           uri: http://angular-service:8080
            predicates:
-            - Path=/gaff/session-control/**
+            - Path=/**
             
          - id: aportacion-service
            uri: http://aportacion-service:8080
@@ -19,7 +19,7 @@ spring:
          - id: first-microservice
            uri: http://first-microservice:8080
            predicates:
-            - Path=/first/**
+            - Path=/**
             
        
    httpclient:
