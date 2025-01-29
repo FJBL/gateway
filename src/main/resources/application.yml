@@ -9,7 +9,9 @@ spring:
          - id: GAFF-SESSION-SERVICE
            uri: http://angular-service:8080
            predicates:
-            - Path=/**
+            - Path=/front
+           filters:
+            - RedirectTo=302, http://angular-service:8080
             
          - id: aportacion-service
            uri: http://aportacion-service:8080
