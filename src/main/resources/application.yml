@@ -13,10 +13,10 @@ spring:
            predicates:
             - Path=/open/**
 
-         - id: first-service
-           uri: http://first-service:8080
+         - id: usuario-service
+           uri: http://usuario-service:8080
            predicates:
-            - Path=/first/**
+            - Path=/usuario/**
             
          - id: angular-service
            uri: http://angular-service:8080
