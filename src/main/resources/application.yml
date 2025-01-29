@@ -19,7 +19,7 @@ spring:
          - id: first-microservice
            uri: http://first-microservice:8080
            predicates:
-           - Path=/first/**
+            - Path=/first/**
             
        
    httpclient:
